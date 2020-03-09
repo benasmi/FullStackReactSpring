@@ -20,6 +20,7 @@ public class UserResource {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/all")
     public List<Users> getAll() {
         return usersMapper.findAll();
