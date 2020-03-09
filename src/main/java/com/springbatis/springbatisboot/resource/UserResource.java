@@ -20,6 +20,7 @@ public class UserResource {
     }
 
 
+    @ResponseBody
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/all")
     public List<Users> getAll() {
