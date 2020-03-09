@@ -3,8 +3,18 @@ package com.springbatis.springbatisboot.model;
 public class Users {
 
     private String name;
-    private Long salary;
-    private Integer id;
+    private String surname;
+    private String email;
+    private String birthday;
+    private String password;
+
+    public Users(String name, String surname, String email, String birthday, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.birthday = birthday;
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -14,19 +24,35 @@ public class Users {
         this.name = name;
     }
 
-    public Long getSalary() {
-        return salary;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSalary(Long salary) {
-        this.salary = salary;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public Integer getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

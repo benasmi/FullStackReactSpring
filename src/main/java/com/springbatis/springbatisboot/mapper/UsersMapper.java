@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface UsersMapper {
-    @Select("select * from AIRPLANES")
+    @Select("select * from USERS")
     List<Users> findAll();
 
     @Select("select * from users where name=#{name}")
