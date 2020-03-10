@@ -2,6 +2,7 @@ package com.springbatis.springbatisboot.resource;
 
 
 import com.springbatis.springbatisboot.mapper.UsersMapper;
+import com.springbatis.springbatisboot.model.Params;
 import com.springbatis.springbatisboot.model.Users;
 import org.apache.catalina.User;
 import org.springframework.ui.Model;
@@ -29,7 +30,7 @@ public class UserResource {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/update")
+    @PostMapping("/update")
     public List<Users> update(@RequestBody List<Users> users){
         for(int i = 0; i<users.size(); i++){
             usersMapper.updateUser(users.get(i));
