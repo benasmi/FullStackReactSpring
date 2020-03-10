@@ -42,6 +42,16 @@ public class UserResource {
         return users;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/delete")
+    public List<Users> delete(@RequestBody List<Users> users){
+        for(int i = 0; i<users.size(); i++){
+            usersMapper.deleteUser(users.get(i));
+        }
+        return users;
+    }
+
+
 
 //    @GetMapping("/specific/{name}")
 //    public Users getSpecific(@PathVariable String name) {

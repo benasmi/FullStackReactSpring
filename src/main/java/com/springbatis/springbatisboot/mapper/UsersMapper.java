@@ -18,6 +18,8 @@ public interface UsersMapper {
             "VALUES (#{user.name}, #{user.surname}, #{user.birthday}, #{user.gender}, #{user.password}, #{user.email})")
     void insertUser(@Param("user") Users user);
 
+    @Delete("DELETE FROM USERS WHERE email=#{user.email}")
+    void deleteUser(@Param("user") Users user);
 
 //    @Select("select * from users where name=#{name}")
 //    Users findSpecific(@Param("name") String name);
