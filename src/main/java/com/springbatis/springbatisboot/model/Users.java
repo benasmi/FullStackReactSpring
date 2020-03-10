@@ -7,13 +7,15 @@ public class Users {
     private String email;
     private String birthday;
     private String password;
+    private String gender;
 
-    public Users(String name, String surname, String email, String birthday, String password) {
+    public Users(String name, String surname, String email, String birthday, String password, String gender) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.birthday = birthday;
         this.password = password;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -54,5 +56,13 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
