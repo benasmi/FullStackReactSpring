@@ -29,6 +29,7 @@ public class UserResource {
     }
 
     @GetMapping("/update")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Users> update(@RequestBody List<Users> users){
         for(int i = 0; i<users.size(); i++){
             usersMapper.updateUser(users.get(i));
