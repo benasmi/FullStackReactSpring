@@ -8,8 +8,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@MapperScan("com.springbatis.springbatisboot.mapper")
-@SpringBootApplication
+@MapperScan("com.springbatis.springbatisboot.Mappers")
+@SpringBootApplication(scanBasePackages = {
+		"com.springbatis.springbatisboot.Controllers",
+		"com.springbatis.springbatisboot.Mappers", "com.springbatis.springbatisboot.Models"})
 public class SpringbatisBootApplication {
 
 	public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class SpringbatisBootApplication {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
+				System.out.println("Paleido");
 				registry.addMapping("/**")
 						.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH").allowedOrigins("*");
 			}

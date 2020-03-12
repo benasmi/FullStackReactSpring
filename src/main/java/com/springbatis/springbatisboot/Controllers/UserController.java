@@ -3,6 +3,7 @@ package com.springbatis.springbatisboot.Controllers;
 
 import com.springbatis.springbatisboot.Mappers.UsersMapper;
 import com.springbatis.springbatisboot.Models.Users;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
