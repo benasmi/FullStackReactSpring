@@ -1,6 +1,6 @@
-package com.springbatis.springbatisboot.mapper;
+package com.springbatis.springbatisboot.Mappers;
 
-import com.springbatis.springbatisboot.model.Users;
+import com.springbatis.springbatisboot.Models.Users;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

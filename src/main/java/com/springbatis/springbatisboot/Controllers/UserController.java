@@ -1,30 +1,30 @@
-package com.springbatis.springbatisboot.resource;
+package com.springbatis.springbatisboot.Controllers;
 
 
-import com.springbatis.springbatisboot.mapper.UsersMapper;
-import com.springbatis.springbatisboot.model.Users;
+import com.springbatis.springbatisboot.Mappers.UsersMapper;
+import com.springbatis.springbatisboot.Models.Users;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class UserResource {
+public class UserController {
 
     private UsersMapper usersMapper;
 
-    public UserResource(UsersMapper mapper){
+    public UserController(UsersMapper mapper){
         usersMapper = mapper;
     }
 
     @ResponseBody
-    @CrossOrigin(origins = "http://localhost:3000")
+    //@CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/all")
     public List<Users> getAll() {
         return usersMapper.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    //@CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/update")
     public List<Users> update(@RequestBody List<Users> users){
         for(int i = 0; i<users.size(); i++){
@@ -33,7 +33,7 @@ public class UserResource {
         return users;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    //@CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/insert")
     public List<Users> insert(@RequestBody List<Users> users){
         for(int i = 0; i<users.size(); i++){
@@ -42,7 +42,7 @@ public class UserResource {
         return users;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    //@CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/delete")
     public List<Users> delete(@RequestBody List<Users> users){
         for(int i = 0; i<users.size(); i++){
