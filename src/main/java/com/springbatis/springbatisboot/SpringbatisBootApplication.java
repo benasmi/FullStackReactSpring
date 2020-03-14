@@ -11,7 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @MapperScan("com.springbatis.springbatisboot.Mappers")
 @SpringBootApplication(scanBasePackages = {
 		"com.springbatis.springbatisboot.Controllers",
-		"com.springbatis.springbatisboot.Mappers", "com.springbatis.springbatisboot.Models"})
+		"com.springbatis.springbatisboot.Mappers",
+		"com.springbatis.springbatisboot.Models"})
 public class SpringbatisBootApplication {
 
 	public static void main(String[] args) {

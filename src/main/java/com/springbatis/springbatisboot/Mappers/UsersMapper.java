@@ -1,6 +1,6 @@
 package com.springbatis.springbatisboot.Mappers;
 
-import com.springbatis.springbatisboot.Models.Users;
+import com.springbatis.springbatisboot.Models.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.List;
 public interface UsersMapper {
 
     @Select("select * from USERS")
-    List<Users> findAll();
+    List<User> findAll();
 
     @Update("UPDATE USERS set name=#{user.name} WHERE email=#{user.email}")
-    void updateUser(@Param("user") Users user);
+    void updateUser(@Param("user") User user);
 
     @Insert("INSERT INTO USERS (name, surname, birthday, gender, password, email)" +
             "VALUES (#{user.name}, #{user.surname}, #{user.birthday}, #{user.gender}, #{user.password}, #{user.email})")
-    void insertUser(@Param("user") Users user);
+    void insertUser(@Param("user") User user);
 
     @Delete("DELETE FROM USERS WHERE email=#{user.email}")
-    void deleteUser(@Param("user") Users user);
+    void deleteUser(@Param("user") User user);
 
 //    @Select("select * from users where name=#{name}")
 //    Users findSpecific(@Param("name") String name);

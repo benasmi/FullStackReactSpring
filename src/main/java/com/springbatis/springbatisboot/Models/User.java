@@ -1,6 +1,6 @@
 package com.springbatis.springbatisboot.Models;
 
-public class Users {
+public class User {
 
     private String name;
     private String surname;
@@ -9,7 +9,7 @@ public class Users {
     private String password;
     private String gender;
 
-    public Users(String name, String surname, String email, String birthday, String password, String gender) {
+    public User(String name, String surname, String email, String birthday, String password, String gender) {
         this.name = name;
         this.surname = surname;
         this.email = email;

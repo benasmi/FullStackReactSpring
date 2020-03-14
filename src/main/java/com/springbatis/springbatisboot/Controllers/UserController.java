@@ -2,8 +2,7 @@ package com.springbatis.springbatisboot.Controllers;
 
 
 import com.springbatis.springbatisboot.Mappers.UsersMapper;
-import com.springbatis.springbatisboot.Models.Users;
-import org.springframework.stereotype.Component;
+import com.springbatis.springbatisboot.Models.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,33 +18,29 @@ public class UserController {
     }
 
     @ResponseBody
-    //@CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/all")
-    public List<Users> getAll() {
+    public List<User> getAll() {
         return usersMapper.findAll();
     }
 
-    //@CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/update")
-    public List<Users> update(@RequestBody List<Users> users){
+    public List<User> update(@RequestBody List<User> users){
         for(int i = 0; i<users.size(); i++){
             usersMapper.updateUser(users.get(i));
         }
         return users;
     }
 
-    //@CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/insert")
-    public List<Users> insert(@RequestBody List<Users> users){
+    public List<User> insert(@RequestBody List<User> users){
         for(int i = 0; i<users.size(); i++){
             usersMapper.insertUser(users.get(i));
         }
         return users;
     }
 
-    //@CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/delete")
-    public List<Users> delete(@RequestBody List<Users> users){
+    public List<User> delete(@RequestBody List<User> users){
         for(int i = 0; i<users.size(); i++){
             usersMapper.deleteUser(users.get(i));
         }
