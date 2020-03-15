@@ -16,7 +16,7 @@ public interface CityMapper {
     void updateCity(@Param("city") City city);
 
     @Insert("INSERT INTO CITY (cityName, averageTemperature, fk_timeZone, fk_currency, fk_countryCode)" +
-            "VALUES (#{city.cityName}, #{city.averageTemperature}, #{city.fk_timeZone}, #{city.fk_currency}, #{city.countryCode})")
+            "VALUES (#{city.cityName}, #{city.averageTemperature}, #{city.fk_timeZone}, #{city.fk_currency}, #{city.fk_countryCode})")
     void insertCity(@Param("city") City city);
 
     @Delete("DELETE FROM CITY WHERE cityName=#{city.cityName}")
