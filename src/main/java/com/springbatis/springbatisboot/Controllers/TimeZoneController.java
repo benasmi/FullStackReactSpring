@@ -1,8 +1,7 @@
 package com.springbatis.springbatisboot.Controllers;
 
-
-import com.springbatis.springbatisboot.Mappers.CountryMapper;
-import com.springbatis.springbatisboot.Models.Country;
+import com.springbatis.springbatisboot.Mappers.TimeZoneMapper;
+import com.springbatis.springbatisboot.Models.TimeZone;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,18 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/country")
-public class CountryController {
+@RequestMapping("/timezone")
+public class TimeZoneController {
 
-    public CountryMapper mapper;
+    public TimeZoneMapper mapper;
 
-    public CountryController(CountryMapper mapper) {
+    public TimeZoneController(TimeZoneMapper mapper) {
         this.mapper = mapper;
     }
 
     @GetMapping("/all")
-    List<Country> selectAll(){
+    List<TimeZone> selectAll(){
         return mapper.selectAll();
     }
-
 }
