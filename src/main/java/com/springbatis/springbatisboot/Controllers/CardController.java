@@ -1,6 +1,7 @@
 package com.springbatis.springbatisboot.Controllers;
 
 import com.springbatis.springbatisboot.Mappers.CreditCardMapper;
+import com.springbatis.springbatisboot.Mappers.UsersMapper;
 import com.springbatis.springbatisboot.Models.CreditCard;
 import com.springbatis.springbatisboot.Models.User;
 import com.springbatis.springbatisboot.Models.UserWithCards;
@@ -16,9 +17,11 @@ import java.util.List;
 public class CardController {
 
     public CreditCardMapper mapper;
+    public UsersMapper usersMapper;
 
-    public CardController(CreditCardMapper mapper) {
+    public CardController(CreditCardMapper mapper, UsersMapper usersMapper) {
         this.mapper = mapper;
+        this.usersMapper = usersMapper;
     }
 
     @PostMapping("/usercards")
@@ -28,6 +31,7 @@ public class CardController {
 
     @PostMapping("/insert")
     List<CreditCard> insertCardsForUser(@RequestBody UserWithCards cardsUser){
+        usersMapper.insertUser(cardsUser.user);
         for(int i = 0; i<cardsUser.cards.size(); i++){
             mapper.insertCreditCard(cardsUser.user,cardsUser.cards.get(i));
         }
