@@ -14,8 +14,8 @@ public interface UsersMapper {
     @Update("UPDATE USERS set name=#{user.name} WHERE email=#{user.email}")
     void updateUser(@Param("user") User user);
 
-    @Insert("INSERT INTO USERS (name, surname, birthday, gender, password, email)" +
-            "VALUES (#{user.name}, #{user.surname}, #{user.birthday}, #{user.gender}, #{user.password}, #{user.email})")
+    @Insert("INSERT INTO USERS (name, surname, birthday, gender, password, email, fk_country)" +
+            "VALUES (#{user.name}, #{user.surname}, #{user.birthday}, #{user.gender}, #{user.password}, #{user.email}, #{user.fk_country})")
     void insertUser(@Param("user") User user);
 
     @Delete("DELETE FROM USERS WHERE email=#{user.email}")

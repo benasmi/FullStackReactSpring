@@ -8,14 +8,16 @@ public class User {
     private String birthday;
     private String password;
     private String gender;
+    private int fk_country;
 
-    public User(String name, String surname, String email, String birthday, String password, String gender) {
+    public User(String name, String surname, String email, String birthday, String password, String gender, int fk_country) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.birthday = birthday;
         this.password = password;
         this.gender = gender;
+        this.fk_country = fk_country;
     }
 
     public String getName() {
@@ -64,5 +66,13 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getFk_country() {
+        return fk_country;
+    }
+
+    public void setFk_country(int fk_country) {
+        this.fk_country = fk_country;
     }
 }
