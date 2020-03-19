@@ -1,10 +1,9 @@
 package com.springbatis.springbatisboot.Controllers;
 
 import com.springbatis.springbatisboot.Mappers.TimeZoneMapper;
+import com.springbatis.springbatisboot.Models.Suggestion;
 import com.springbatis.springbatisboot.Models.TimeZone;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +20,15 @@ public class TimeZoneController {
     @GetMapping("/all")
     List<TimeZone> selectAll(){
         return mapper.selectAll();
+    }
+
+    @PostMapping("/update")
+    void updateTimeZone(@RequestBody TimeZone timeZone){
+        mapper.updateTimeZone(timeZone);
+    }
+
+    @PostMapping("/delete")
+    void deleteCurrency(@RequestBody TimeZone timeZone){
+        mapper.deleteTimeZone(timeZone);
     }
 }

@@ -1,10 +1,9 @@
 package com.springbatis.springbatisboot.Controllers;
 
 import com.springbatis.springbatisboot.Mappers.SuggestionMapper;
+import com.springbatis.springbatisboot.Models.Currency;
 import com.springbatis.springbatisboot.Models.Suggestion;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +20,15 @@ public class SuggestionController {
     @GetMapping("/all")
     List<Suggestion> getSuggestions(){
         return mapper.selectAll();
+    }
+
+    @PostMapping("/update")
+    void updateSuggestion(@RequestBody Suggestion suggestion){
+        mapper.updateSuggestion(suggestion);
+    }
+
+    @PostMapping("/delete")
+    void deleteSuggestion(@RequestBody Suggestion suggestion){
+        mapper.deleteSuggestion(suggestion);
     }
 }

@@ -3,9 +3,8 @@ package com.springbatis.springbatisboot.Controllers;
 
 import com.springbatis.springbatisboot.Mappers.CountryMapper;
 import com.springbatis.springbatisboot.Models.Country;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.springbatis.springbatisboot.Models.TimeZone;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +23,13 @@ public class CountryController {
         return mapper.selectAll();
     }
 
+    @PostMapping("/update")
+    void updateCountry(@RequestBody Country country){
+        mapper.updateCountry(country);
+    }
+
+    @PostMapping("/delete")
+    void deleteCountry(@RequestBody Country country){
+        mapper.deleteCountry(country);
+    }
 }
