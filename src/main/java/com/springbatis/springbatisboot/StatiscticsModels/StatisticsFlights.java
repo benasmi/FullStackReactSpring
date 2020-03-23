@@ -1,29 +1,12 @@
 package com.springbatis.springbatisboot.StatiscticsModels;
 
+import com.springbatis.springbatisboot.Models.Reservation;
+
 import java.util.List;
 
 public class StatisticsFlights {
-    public List<ReservationUnit> fligths;
-    public int totalFligths;
 
-    public StatisticsFlights(List<ReservationUnit> fligths, int totalFligths) {
-        this.fligths = fligths;
-        this.totalFligths = totalFligths;
-    }
+    public String flightNumber;
+    public List<StatisticsFlightResBody> fligths;
 
-    public List<ReservationUnit> getFligths() {
-        return fligths;
-    }
-
-    public void setFligths(List<ReservationUnit> fligths) {
-        this.fligths = fligths;
-    }
-
-    public int getTotalFligths() {
-        return totalFligths;
-    }
-
-    public void setTotalFligths(int totalFligths) {
-        this.totalFligths = totalFligths;
-    }
 }

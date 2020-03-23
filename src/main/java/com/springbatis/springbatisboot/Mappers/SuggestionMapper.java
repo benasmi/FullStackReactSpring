@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface SuggestionMapper {
 
-    @Select("select * from SUGGESTION")
+    @Select("SELECT * FROM SUGGESTION")
     List<Suggestion> selectAll();
 
     @Update("UPDATE SUGGESTION set placeName=#{sug.placeName}, isFamilyFriendly=${sug.isFamilyFriendly}, imageUrl=#{sug.imageUrl}, ticketPrice=#{sug.ticketPrice} WHERE suggestionId=#{sug.suggestionId}")
