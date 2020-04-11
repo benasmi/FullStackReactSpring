@@ -45,10 +45,16 @@ public class CardController {
         return cards.stream().collect(Collectors.groupingBy(CreditCard::getFk_email));
     }
 
+    @PostMapping
+    void remove(@RequestBody CreditCard card){
+        mapper.deleteCard(card);
+    }
+
     @PostMapping("/update")
     void update(@RequestBody List<CreditCard> cards){
         for (CreditCard c: cards) {
             mapper.updateCard(c);
         }
     }
+
 }
