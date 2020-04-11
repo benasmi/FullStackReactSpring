@@ -23,7 +23,7 @@ public interface CreditCardMapper {
     void deleteCard(@Param("card") CreditCard card);
 
 
-    @Update("UPDATE CREDIT_CARD set csv=#{card.csv}, expYear=#{card.expYear}, expMonth=#{card.expMonth} cardNumber=#{card.cardNumber} fk_cardProvider=#{card.fk_cardProvider} WHERE cardNumber=#{card.cardNumber}")
+    @Update("UPDATE CREDIT_CARD set csv=#{card.csv}, expYear=#{card.expYear}, expMonth=#{card.expMonth} fk_cardProvider=#{card.fk_cardProvider} WHERE cardNumber=#{card.cardNumber}")
     void updateCard(@Param("card") CreditCard card);
 
     @Insert("INSERT INTO CREDIT_CARD (csv,expYear,expMonth,cardNumber, fk_email, fk_cardProvider)" +
