@@ -1,8 +1,10 @@
 package com.springbatis.springbatisboot.Controllers;
 
 
+import com.springbatis.springbatisboot.Mappers.CreditCardMapper;
 import com.springbatis.springbatisboot.Mappers.UsersMapper;
 import com.springbatis.springbatisboot.Models.User;
+import com.springbatis.springbatisboot.Models.UserWithCards;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,10 +13,13 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private UsersMapper usersMapper;
 
-    public UserController(UsersMapper mapper){
-        usersMapper = mapper;
+    private UsersMapper usersMapper;
+    private CreditCardMapper creditCardMapper;
+
+    public UserController(UsersMapper usersMapper, CreditCardMapper creditCardMapper) {
+        this.usersMapper = usersMapper;
+        this.creditCardMapper = creditCardMapper;
     }
 
     @ResponseBody
@@ -29,6 +34,16 @@ public class UserController {
             usersMapper.updateUser(users.get(i));
         }
         return users;
+    }
+
+    @PostMapping("/updatewithcards")
+    public void updateWithCards(@RequestBody List<UserWithCards> userWithCards){
+        for(int i = 0; i<userWithCards.size(); i++){
+            usersMapper.updateUser(userWithCards.get(i).user);
+            for(int j = 0; j<userWithCards.get(i).cards.size(); j++){
+                creditCardMapper.updateCard(userWithCards.get(i).cards.get(j));
+            }
+        }
     }
 
     @PostMapping("/insert")
