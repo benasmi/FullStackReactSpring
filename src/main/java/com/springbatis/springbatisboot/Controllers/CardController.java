@@ -45,7 +45,7 @@ public class CardController {
         return cards.stream().collect(Collectors.groupingBy(CreditCard::getFk_email));
     }
 
-    @PostMapping
+    @PostMapping("/remove")
     void remove(@RequestBody CreditCard card){
         mapper.deleteCard(card);
     }
