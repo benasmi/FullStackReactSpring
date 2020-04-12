@@ -3,6 +3,7 @@ package com.springbatis.springbatisboot.StatiscticsModels;
 public class StatisticsFlightResBody {
     public Object flightNumber;
     public Object fullName;
+    public Object email;
     public Object hourDuration;
     public Object minuteDuration;
     public Object reservationId;
@@ -11,7 +12,7 @@ public class StatisticsFlightResBody {
     public Object totalPaymentSumPerReservation;
     public Object totalDifCardsUsedPerReservation;
 
-    public StatisticsFlightResBody(Object flightNumber, Object fullName, Object hourDuration, Object minuteDuration, Object reservationId, Object totalDifCardsPerUser, Object totalPaymentPerReservation, Object totalPaymentSumPerReservation, Object totalDifCardsUsedPerReservation) {
+    public StatisticsFlightResBody(Object flightNumber, Object fullName, Object hourDuration, Object minuteDuration, Object reservationId, Object totalDifCardsPerUser, Object totalPaymentPerReservation, Object totalPaymentSumPerReservation, Object totalDifCardsUsedPerReservation, Object email) {
         this.flightNumber = flightNumber;
         this.fullName = fullName;
         this.hourDuration = hourDuration;
@@ -21,6 +22,15 @@ public class StatisticsFlightResBody {
         this.totalPaymentPerReservation = totalPaymentPerReservation;
         this.totalPaymentSumPerReservation = totalPaymentSumPerReservation;
         this.totalDifCardsUsedPerReservation = totalDifCardsUsedPerReservation;
+        this.email = email;
+    }
+
+    public Object getEmail() {
+        return email;
+    }
+
+    public void setEmail(Object email) {
+        this.email = email;
     }
 
     public Object getFlightNumber() {

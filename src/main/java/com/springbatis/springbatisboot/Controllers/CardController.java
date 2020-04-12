@@ -3,11 +3,11 @@ package com.springbatis.springbatisboot.Controllers;
 import com.springbatis.springbatisboot.Mappers.CreditCardMapper;
 import com.springbatis.springbatisboot.Mappers.UsersMapper;
 import com.springbatis.springbatisboot.Models.CreditCard;
+import com.springbatis.springbatisboot.Models.ReservationId;
 import com.springbatis.springbatisboot.Models.User;
 import com.springbatis.springbatisboot.Models.UserWithCards;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -37,6 +37,12 @@ public class CardController {
                 mapper.insertCreditCard(cardsUser.get(x).user,cardsUser.get(x).cards.get(i));
             }
         }
+    }
+
+    @PostMapping("/byreservation")
+    @ResponseBody
+    List<CreditCard> cardsByReservation(@RequestBody ReservationId id){
+        return mapper.getByReservationUser(id);
     }
 
     @GetMapping("/all")

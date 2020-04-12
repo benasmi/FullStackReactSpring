@@ -12,12 +12,12 @@ import java.util.List;
 @Mapper
 public interface StatisticsMapper {
 
-    @Select("SELECT f.flightNumber, HOUR(TIMEDIFF(f.stopDate, f.startDate)) as hoursDuration, MINUTE(TIMEDIFF(f.stopDate, f.startDate)) as minuteDuration, r.reservationId,\n" +
-            "CONCAT(u.name, ' ' , u.surname) as fullName, \n" +
+    @Select("SELECT f.flightNumber, HOUR(TIMEDIFF(f.stopDate, f.startDate)) as hourDuration, MINUTE(TIMEDIFF(f.stopDate, f.startDate)) as minuteDuration, r.reservationId,\n" +
+            "CONCAT(u.name, ' ' , u.surname) as fullName, u.email \n" +
             "(SELECT COUNT(c.fk_email) FROM CREDIT_CARD c WHERE c.fk_email = u.email ) as totalDifCardsPerUser,\n" +
             "(SELECT COUNT(p.fk_reservationId) FROM PAYMENT p WHERE p.fk_reservationId = r.reservationId ) as totalPaymentsPerReservation,\n" +
             "(SELECT SUM(p.paymentAmount) FROM PAYMENT p WHERE p.fk_reservationId = r.reservationId ) as totalPaymentSumPerReservation,\n" +
-            "(SELECT COUNT(p.fk_cardNumber) FROM PAYMENT p WHERE p.fk_reservationId = r.reservationId ) as totalDifCardsUsedPerReservation\n" +
+            "(SELECT COUNT(DISTINCT p.fk_cardNumber) FROM PAYMENT p WHERE p.fk_reservationId = r.reservationId ) as totalDifCardsUsedPerReservation\n" +
             "FROM FLIGHT f\n" +
             "INNER JOIN RESERVATION r ON f.flightNumber = r.fk_flightNumber\n" +
             "LEFT JOIN USERS u ON r.fk_email = u.email\n" +
