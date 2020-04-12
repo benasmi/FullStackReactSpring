@@ -13,7 +13,7 @@ import java.util.List;
 public interface StatisticsMapper {
 
     @Select("SELECT f.flightNumber, HOUR(TIMEDIFF(f.stopDate, f.startDate)) as hourDuration, MINUTE(TIMEDIFF(f.stopDate, f.startDate)) as minuteDuration, r.reservationId,\n" +
-            "CONCAT(u.name, ' ' , u.surname) as fullName, u.email \n" +
+            "CONCAT(u.name, ' ' , u.surname) as fullName, u.email, \n" +
             "(SELECT COUNT(c.fk_email) FROM CREDIT_CARD c WHERE c.fk_email = u.email ) as totalDifCardsPerUser,\n" +
             "(SELECT COUNT(p.fk_reservationId) FROM PAYMENT p WHERE p.fk_reservationId = r.reservationId ) as totalPaymentsPerReservation,\n" +
             "(SELECT SUM(p.paymentAmount) FROM PAYMENT p WHERE p.fk_reservationId = r.reservationId ) as totalPaymentSumPerReservation,\n" +
