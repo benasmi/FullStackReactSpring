@@ -9,8 +9,8 @@ import java.util.List;
 @Mapper
 public interface CreditCardMapper {
 
-    @Select("select * from CREDIT_CARD where fk_email=#{user.email}")
-    List<CreditCard> findAllForUser(@Param("user") User user);
+    @Select("select * from CREDIT_CARD where fk_email=#{user}")
+    List<CreditCard> findAllForUser(@Param("user") String user);
 
     @Select("select * from CREDIT_CARD")
     List<CreditCard> getAllByUser();

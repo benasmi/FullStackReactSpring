@@ -25,8 +25,8 @@ public class CardController {
     }
 
     @PostMapping("/usercards")
-    List<CreditCard> allUserCards(@RequestBody User user){
-        return mapper.findAllForUser(user);
+    List<CreditCard> allUserCards(@RequestBody String email){
+        return mapper.findAllForUser(email);
     }
 
     @PostMapping("/insert")
