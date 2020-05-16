@@ -18,12 +18,12 @@ public class SpringbatisBootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbatisBootApplication.class, args);
 	}
+
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				System.out.println("Paleido");
 				registry.addMapping("/**")
 						.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH").allowedOrigins("*");
 			}

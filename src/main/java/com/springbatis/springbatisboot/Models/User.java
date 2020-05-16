@@ -20,6 +20,10 @@ public class User {
         this.fk_country = fk_country;
     }
 
+    public User(){
+
+    }
+
     public String getName() {
         return name;
     }

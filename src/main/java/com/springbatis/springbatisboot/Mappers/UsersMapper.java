@@ -20,7 +20,7 @@ public interface UsersMapper {
 
     @Delete("DELETE FROM USERS WHERE email=#{user.email}")
     void deleteUser(@Param("user") User user);
-
+    
 //    @Select("select * from users where name=#{name}")
 //    Users findSpecific(@Param("name") String name);
 //

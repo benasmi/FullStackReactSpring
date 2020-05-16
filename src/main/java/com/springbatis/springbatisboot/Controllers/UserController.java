@@ -64,7 +64,7 @@ public class UserController {
 
 
 
-//    @GetMapping("/specific/{name}")
+     //@GetMapping("/specific/{id}")
 //    public Users getSpecific(@PathVariable String name) {
 //        return usersMapper.findSpecific(name);
 //    }
