@@ -5,12 +5,15 @@ public class StatiscticsFlightsReqBody {
     public int hourEndBound;
     public String startDate;
     public String stopDate;
+    public boolean showPayments;
 
-    public StatiscticsFlightsReqBody(int hourStartBound, int hourEndBound, String startDate, String stopDate) {
+
+    public StatiscticsFlightsReqBody(int hourStartBound, int hourEndBound, String startDate, String stopDate, boolean showPayments) {
         this.hourStartBound = hourStartBound;
         this.hourEndBound = hourEndBound;
         this.startDate = startDate;
         this.stopDate = stopDate;
+        this.showPayments = showPayments;
     }
 
     public int getHourStartBound() {
@@ -43,5 +46,13 @@ public class StatiscticsFlightsReqBody {
 
     public void setStopDate(String stopDate) {
         this.stopDate = stopDate;
+    }
+
+    public boolean isShowPayments() {
+        return showPayments;
+    }
+
+    public void setShowPayments(boolean showPayments) {
+        this.showPayments = showPayments;
     }
 }

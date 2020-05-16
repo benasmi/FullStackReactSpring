@@ -14,4 +14,5 @@ public interface PaymentMapper {
 
     @Select("select * from PAYMENT p where p.fk_reservationId=#{reservationId.reservationId}")
     List<Payment> selectPaymentByReservationId(@Param("reservationId") ReservationId reservationid);
+
 }

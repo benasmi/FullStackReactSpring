@@ -1,5 +1,7 @@
 package com.springbatis.springbatisboot.StatiscticsModels;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class StatisticsFlightResBody {
     public Object flightNumber;
     public Object fullName;
@@ -11,10 +13,12 @@ public class StatisticsFlightResBody {
     public Object totalPaymentPerReservation;
     public Object totalPaymentSumPerReservation;
     public Object totalDifCardsUsedPerReservation;
+    public Object payments;
 
-    public StatisticsFlightResBody(Object flightNumber, Object fullName, Object hourDuration, Object minuteDuration, Object reservationId, Object totalDifCardsPerUser, Object totalPaymentPerReservation, Object totalPaymentSumPerReservation, Object totalDifCardsUsedPerReservation, Object email) {
+    public StatisticsFlightResBody(Object flightNumber, Object fullName, Object email, Object hourDuration, Object minuteDuration, Object reservationId, Object totalDifCardsPerUser, Object totalPaymentPerReservation, Object totalPaymentSumPerReservation, Object totalDifCardsUsedPerReservation) {
         this.flightNumber = flightNumber;
         this.fullName = fullName;
+        this.email = email;
         this.hourDuration = hourDuration;
         this.minuteDuration = minuteDuration;
         this.reservationId = reservationId;
@@ -22,15 +26,7 @@ public class StatisticsFlightResBody {
         this.totalPaymentPerReservation = totalPaymentPerReservation;
         this.totalPaymentSumPerReservation = totalPaymentSumPerReservation;
         this.totalDifCardsUsedPerReservation = totalDifCardsUsedPerReservation;
-        this.email = email;
-    }
 
-    public Object getEmail() {
-        return email;
-    }
-
-    public void setEmail(Object email) {
-        this.email = email;
     }
 
     public Object getFlightNumber() {
@@ -47,6 +43,14 @@ public class StatisticsFlightResBody {
 
     public void setFullName(Object fullName) {
         this.fullName = fullName;
+    }
+
+    public Object getEmail() {
+        return email;
+    }
+
+    public void setEmail(Object email) {
+        this.email = email;
     }
 
     public Object getHourDuration() {
@@ -104,4 +108,5 @@ public class StatisticsFlightResBody {
     public void setTotalDifCardsUsedPerReservation(Object totalDifCardsUsedPerReservation) {
         this.totalDifCardsUsedPerReservation = totalDifCardsUsedPerReservation;
     }
+
 }
