@@ -17,6 +17,8 @@ public class TabConversion {
      * @param args the command line arguments
      */
     static String fileName="test1.mid";
+    static String outputFile="testing.txt";
+
     public static void main(String[] args) throws Exception {
 //        InputRead iRead = new InputRead();
 //        NoteID converter = new NoteID();
@@ -25,5 +27,10 @@ public class TabConversion {
 //        for (int i = 0; i < chords.size(); i++) {
 //            System.out.println(chords.get(i) + "\t\t" + tabs.get(i));
 //        }
-    }    
+//
+//        WriteFile writer = new WriteFile();
+//        writer.writeToFile(outputFile, tabs, 6);
+
+    }
+
 }

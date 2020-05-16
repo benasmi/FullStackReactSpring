@@ -34,7 +34,7 @@ public class Tab {
     
     public Integer get(int index)
     {
-        if (index > 0 && index < tuning.length) {
+        if (index >= 0 && index < tuning.length) {
             return strings[index];
         }
         return null;
