@@ -5,6 +5,9 @@
  */
 package com.springbatis.springbatisboot.tabconversion;
 
+
+import com.springbatis.springbatisboot.Models.TabUnit;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,23 +36,30 @@ public class WriteFile {
         }
     }
     
-    public String writeToFile(ArrayList<Tab> Tabs, int stringsCount){
-        StringBuilder b = new StringBuilder();
+    public ArrayList<ArrayList<TabUnit>> writeToFile(ArrayList<Tab> Tabs, int stringsCount){
+        //StringBuilder b = new StringBuilder();
 
-            b.append("[");
+            //b.append("[");
+            ArrayList<ArrayList<TabUnit>> mainList = new ArrayList<>();
             for(Tab tab : Tabs){
-                b.append(" [");
+                //b.append(" [");
+                ArrayList<TabUnit> tmp = new ArrayList<>();
                 for(int i=0;i<stringsCount;i++){
                     if(tab.get(i)!=null){
-                        b.append(" ["+(i+1)+","+tab.get(i).toString()+"]");
+                        tmp.add(new TabUnit(i+1,tab.get(i)));
+                        //tmp.add(i+1);
+                        //tmp.add(tab.get(i));
+                       // b.append(" ["+(i+1)+","+tab.get(i).toString()+"]");
                     }
                 }
-                b.append(" ]");
+                mainList.add(tmp);
+                //b.append(" ]");
             }
-            b.append(" ]");
-
-            return b.toString();
+            //b.append(" ]");
+            return mainList;
         }
 
 
 }
+
+

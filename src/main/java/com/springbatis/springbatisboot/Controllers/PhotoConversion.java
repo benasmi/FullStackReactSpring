@@ -1,5 +1,6 @@
 package com.springbatis.springbatisboot.Controllers;
 
+import com.springbatis.springbatisboot.Models.TabUnit;
 import com.springbatis.springbatisboot.tabconversion.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 class PhotoConversion {
 
     @PostMapping("/convert")
-    public String getPaymentsByReservation(@RequestBody MultipartFile file){
+    public ArrayList<ArrayList<TabUnit>> getPaymentsByReservation(@RequestBody MultipartFile file){
 
         InputRead iRead = new InputRead();
         NoteID converter = new NoteID();
